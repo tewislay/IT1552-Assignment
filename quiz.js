@@ -1,11 +1,44 @@
+
+// navigation bar//
+let btnHam = document.querySelector('.ham-btn');
+let btnTimes = document.querySelector('.times-btn');
+let navibar = document.getElementById('nav-bar');
+
+btnHam.addEventListener
+('click', function(){
+    if(btnHam.className !== ""){
+        btnHam.style.display = "none";
+        btnTimes.style.display = "block";
+        navibar.classList.add
+        ("show-nav");
+    }
+})
+
+btnTimes.addEventListener
+('click', function(){
+    if(btnHam.className !== ""){
+        this.style.display = "none";
+        btnHam.style.display = "block";
+        navibar.classList.remove
+        ("show-nav");
+    }
+})
+
+
+// quiz //
+
+
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const title = document.getElementById('title')
 const questionContainerElement = document.getElementById('question-container')
 
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
+let score = 0
+
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -16,6 +49,7 @@ nextButton.addEventListener('click', () => {
 function startGame(){
     console.log('Started')
     startButton.classList.add('hide')
+    title.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -35,6 +69,7 @@ function showQuestion(question){
         button.classList.add('btn')
         if(answer.correct) {
             button.dataset.correct = answer.correct
+            score += 1
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
@@ -62,7 +97,7 @@ function selectAnswer(e){
         nextButton.classList.remove('hide')
     }
     else{
-        startButton.innerText = 'Restart'
+        startButton.innerText = 'Your score is ' + score + '/10.' + '\n' + 'Click to try again.'
         startButton.classList.remove('hide')
     }
     
@@ -85,14 +120,12 @@ function clearStatusClass(element){
 
 const questions = [
     {
-        question: 'Which team won the 2007 NBA Championship?',
+        question: 'How many NBA championships did the Lakers win during the 1960s?',
         answers: [
-            {text: 'Cleveland Cavaliers', correct: false},
-            {text: 'Boston Celtics', correct: false},
-            {text: 'San Antonio Spurs', correct: true},
-            {text: 'Utah Jazz', correct: false}]
-
-
+            {text: '2', correct: false},
+            {text: '6', correct: false},
+            {text: '4', correct: false},
+            {text: '0', correct: true}]
     },
     {
         question: 'Who won the 2005 NBA Finals MVP Award?',
@@ -125,5 +158,46 @@ const questions = [
             {text: 'Micheal Jordan', correct: false},
             {text: 'Magic Johnson', correct: false},
             {text: 'Stephen Curry', correct: true}]
+    },
+    {
+        question: 'Who scored the first three-point basket on NBA history?',
+        answers: [
+        {text: 'Gene Stump', correct: false},
+        {text: 'Larry Bird', correct: false},
+        {text: 'Wes Unseld', correct: false},
+        {text: 'Chris Ford', correct: true}]
+    },
+    {
+        question: "Who is the all-time leading scorer in men's college basketball?",
+        answers: [
+            {text: 'Larry Bird', correct: false},
+            {text: 'Pete Maravich', correct: true},
+            {text: 'Freeman Williams', correct: false},
+            {text: 'Stephen Curry', correct: false}]
+    },
+    {
+        question: 'Who was the first WNBA player to dunk in a playoff game?',
+        answers: [
+            {text: 'Tamika Cathcings', correct: false},
+            {text: 'Lisa Leslie', correct: false},
+            {text: 'Britney Griner', correct: true},
+            {text: 'Michelle Snow', correct: false}]
+    },
+    {
+        question: 'What NBA player was nicknamed "Plastic Man"?',
+        answers: [
+            {text: 'Biily Cunningham', correct: false},
+            {text: 'Stacey Augmon', correct: true},
+            {text: 'Majic Johnson', correct: false},
+            {text: 'Dikebe Mutombo', correct: false}]
+    },
+    {
+        question: 'Which player made the most three-pointers in his NBA debut?',
+        answers: [
+            {text: 'James Harden', correct: false},
+            {text: 'Damian Lillard', correct: false},
+            {text: 'Kemba Walker', correct: false},
+            {text: 'P.J. Washington', correct: true}]
     }
+    
 ]

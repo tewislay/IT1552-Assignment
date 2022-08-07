@@ -1,0 +1,40 @@
+body{
+    font-family: sans-serif;
+    background: linear-gradient(125deg, #cbd6df, #d4cece);
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color: #2c2b2b;
+}
+
+p{
+    text-align: center;
+    font-size: 16px;
+}
+
+.home-button{
+    text-align: center;
+    padding: 20px; 
+}
+
+.home-button button{
+    border-radius: 5px;
+    padding: 8px;
+    background-color: black;
+}
+
+.home-button a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: color 1s ease;
+}
+
+.home-button button:hover{
+    background-color: white;
+}
+
+.home-button a:hover{
+    color: black;
+}

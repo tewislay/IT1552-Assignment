@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --heading:
+    'Monserrat'
+    sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #a2b7c7, #ded0e4);
+    
+}
+
+.form-container{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+
+.title{
+    position: relative;
+    margin: 15px 20px;
+}
+
+.title .account{
+    font-size: 14px;
+    color: #626b70;
+}
+
+.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 30px;
+    background: linear-gradient(135deg, #555d63, #ded0e4);
+    
+}
+
+
+.form-container .user-input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-container .user-input .input-box{
+    display: grid;
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-input .input-box input, select{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: solid #ccc;
+    padding-left: 15px;
+    font-size: 15px;
+    border-bottom-width: 4px;
+    transition: all 0.3s ease;
+}
+
+
+.user-input label{
+    font-weight: 500;
+}
+
+.user-input .input-box input:focus,
+.user-input .input-box input:valid{
+    border-color: #778086;
+}
+
+.user-input .input-box .input-btn{
+    display: flexbox;
+}
+
+.button{
+    text-align: center;
+    margin: 25px 0;
+}
+
+.button input{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid #ccc;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.button input:hover{
+    color: white;
+    background-color: rgb(49, 46, 46);
+}
+.foot{
+    text-align: center;
+    font-weight: 500;
+}
+
+.foot a{
+    text-decoration: underline;
+}
+
+.password-tooltip{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text{
+    display: none;
+    width: 250px;
+    background-color: rgb(54, 51, 51);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+}
+.input-box:hover .tooltip-text{
+    display: block;
+}
+
+/**** responsive ****/
+
+@media(max-width: 900px){
+    .form-container .user-input .input-box{    
+        width: 100%;
+    }
+}

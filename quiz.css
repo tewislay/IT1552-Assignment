@@ -13,13 +13,10 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    display: flex;
-    justify-content: center;
+    display: grid;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    background: hsl(var(--hue), 100%, 20%) !important;
  }
 
 body.correct{
@@ -32,11 +29,14 @@ body.correct{
 
  .container{
     width: 800px;
-    max-width: 80%;
+    max-width: 100%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+    margin: auto;
+    margin-top: 20px;
+    
 }
 
 .btn-grid{
@@ -70,18 +70,34 @@ body.correct{
 }
 
 .start-btn, .next-btn{
+    margin: auto;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
+    width: auto;
+    
 }
 
 .controls{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 }
 
+.title{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #252525;
+    color: white;   
+}
+
+.title span{
+    color: rgb(74, 225, 74);
+    font-weight: bold;
+}
 .hide{
     display: none;
 }
-

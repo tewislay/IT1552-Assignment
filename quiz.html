@@ -6,12 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Page</title>
     <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="index.css">
+     <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/b17fb1cfab.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <div class="navigation-container">
+            <div class="top-head">
+                <div class="web-name">
+                    <h1>NBANEWS</h1>
+                </div>
+
+                <div class="ham-btn">
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+
+                <div class="times-btn">
+                    <span><i class="fas fa-times"></i></span>
+                </div>
+            </div>
+            <!-- nav bar-->
+            <div class="nav-bar" id="nav-bar">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="quiz.html">NBA Quiz</a></li>
+                        <li><a href="table.html">My Personal Top 10 Nba players</a></li>
+                        <li><a href="form.html">Sign Up</a></li>
+                    </ul>
+                </nav>
+            </div>           
+        </div>
+    </header>
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
+                <h3>Q1</h3>
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
                 <button class="btn">Answer 3</button>
@@ -20,9 +56,16 @@
         </div>
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start Quiz</button>
+            <div class="title" id="title">
+                <p>- There are 10 questions</p>
+                <p>- Let's see if you are a genuine NBA fan.</p>
+            </div>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
     </div>
+
+    
+
     <script src="quiz.js"></script>
     
 </body>
